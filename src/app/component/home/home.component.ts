@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setUser(user) {
+  setUser(user: string) {
+    console.log('hello');
     this.userService.setUser(user);
   }
 }

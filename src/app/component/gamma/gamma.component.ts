@@ -47,10 +47,10 @@ export class GammaComponent implements OnInit {
       phone: this.formPhoneGroup.value
     }
 
-    this.formNameGroup.reset();
-    this.formEmailGroup.reset();
-    this.formPasswordGroup.reset();
-    this.formPhoneGroup.reset();
+    // this.formNameGroup.reset();
+    // this.formEmailGroup.reset();
+    // this.formPasswordGroup.reset();
+    // this.formPhoneGroup.reset();
 
     console.log('Form Value', formData);
   }
