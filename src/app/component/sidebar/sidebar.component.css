@@ -1,0 +1,16 @@
+ul{
+    list-style: none;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+li a {
+    color: #949494;
+    text-decoration: none;
+}
+
+.active{
+    color: blueviolet!important;
+}
