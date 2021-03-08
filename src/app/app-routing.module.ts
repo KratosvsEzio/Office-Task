@@ -9,10 +9,10 @@ import { HomeComponent } from './component/home/home.component';
 
 
 const routes: Routes = [
-  { path: 'alpha', component: AlphaComponent, canActivate: [AuthGuard] },
-  { path: 'beta', component: BetaComponent, canActivate: [AuthGuard]},
-  { path: 'gamma', component: GammaComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent,},
+  { path: 'alpha', component: AlphaComponent, canActivate: [AuthGuard], data: { animationState: 'alpha' }},
+  { path: 'beta', component: BetaComponent, canActivate: [AuthGuard], data: { animationState: 'beta' }},
+  { path: 'gamma', component: GammaComponent, canActivate: [AuthGuard], data: { animationState: 'gamma' }},
+  { path: 'home', component: HomeComponent, data: { animationState: 'home' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];

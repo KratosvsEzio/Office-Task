@@ -1,17 +1,28 @@
 .layout{
     display: flex;
     width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .sidebar{
     flex: 1 1 20%;
     min-width: 200px;
+    position: relative;
+    z-index: 2;
+    background-color: white;
 }
 
 .main{
     flex: 1 1 80%;
+    position: relative;
 }
 
 .user{
     color: black;
+}
+
+.routeComponents{
+    position: relative;
+    z-index: -1;
 }
