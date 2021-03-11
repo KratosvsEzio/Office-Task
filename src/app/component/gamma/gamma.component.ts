@@ -14,6 +14,8 @@ export class GammaComponent implements OnInit {
   formEmailGroup : FormGroup;
   formPhoneGroup : FormGroup;
 
+  formData: any = {};
+
   constructor(private fb: FormBuilder) {  }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class GammaComponent implements OnInit {
     });
 
     this.formPasswordGroup  = this.fb.group({
-      passWord: ['', Validators.required]
+      password: ['', Validators.required]
     });
 
     this.formEmailGroup  = this.fb.group({
@@ -40,19 +42,30 @@ export class GammaComponent implements OnInit {
   }
 
   onSubmit() {
-    const formData = {
-      name: this.formNameGroup.value,
-      email: this.formEmailGroup.value,
-      password: this.formPasswordGroup.value,
-      phone: this.formPhoneGroup.value
+    this.formData = {
+      name: this.formNameGroup.controls.userName.value,
+      email: this.formEmailGroup.controls.emailID.value,
+      password: this.formPasswordGroup.controls.password.value,
+      phone: this.formPhoneGroup.controls.mobile.value
     }
+    console.log('Form Value', this.formData);
+  }
 
-    // this.formNameGroup.reset();
-    // this.formEmailGroup.reset();
-    // this.formPasswordGroup.reset();
-    // this.formPhoneGroup.reset();
+  resetStepperForm(stepper: any) {
 
-    console.log('Form Value', formData);
+    this.formResetState(this.formNameGroup);
+    this.formResetState(this.formEmailGroup);
+    this.formResetState(this.formPasswordGroup);
+    this.formResetState(this.formPhoneGroup);
+
+    stepper.reset();
+  }
+
+  formResetState(form) {
+    form.reset();
+    form.markAsPristine();
+    form.markAsUntouched();
+    form.updateValueAndValidity();
   }
 
 

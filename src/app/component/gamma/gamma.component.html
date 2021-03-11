@@ -1,5 +1,14 @@
 <p>Anyone Can Access this Component</p>
 
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><span>Name: </span><span *ngIf="formData.name">{{formData.name}}</span></li>
+    <li class="list-group-item"><span>Email: </span><span *ngIf="formData.email">{{formData.email}}</span></li>
+    <li class="list-group-item"><span>Password: </span><span *ngIf="formData.password">{{formData.password}}</span></li>
+    <li class="list-group-item"><span>Phone: </span><span *ngIf="formData.phone">{{formData.phone}}</span></li>
+  </ul>
+</div>
+
 <mat-horizontal-stepper [linear]="isLinear" #stepper labelPosition="bottom">
     <!-- Step Name -->
     <mat-step [stepControl]="formNameGroup" label="Name" >
@@ -25,8 +34,8 @@
           <form [formGroup]="formPasswordGroup">
               <div class="example-form">
                 <mat-form-field class="example-full-width">
-                  <input type="password" matInput placeholder="Password" required formControlName="passWord">
-                  <mat-error *ngIf="formPasswordGroup.controls['passWord'].hasError('required')">
+                  <input type="password" matInput placeholder="Password" required formControlName="password">
+                  <mat-error *ngIf="formPasswordGroup.controls['password'].hasError('required')">
                           Password is required!
                       </mat-error>
                 </mat-form-field>
@@ -89,7 +98,7 @@
       <div>
           <button mat-raised-button color="primary" matStepperPrevious>Back</button> &nbsp; &nbsp;
           <button mat-raised-button color="accent" (click)="onSubmit()" type="submit">Submit</button> &nbsp; &nbsp;
-          <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
+          <button mat-raised-button color="warn" (click)="resetStepperForm(stepper)">Reset</button>
       </div>
     </mat-step>
   
