@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, Observer } from 'rxjs';
 })
 export class UserService {
 
-  user = new BehaviorSubject<string>('user 1');
+  user = new BehaviorSubject<string | null>(null);
   userObserver: Observable<string> = this.user.asObservable();
 
   constructor() { }
@@ -15,7 +15,7 @@ export class UserService {
     return this.userObserver;
   }
 
-  setUser(data: string): void {
+  setUser(data: string | null): void {
     this.user.next(data);
   }
 }

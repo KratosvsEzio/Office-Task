@@ -1,11 +1,14 @@
 <div class="layout">
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="main">
-    <p>Current User = <span class="user">{{user}}</span></p>
-    <div class="routeComponents" [@triggerName]="prepareRoute(outlet)">
-      <router-outlet #outlet="outlet"></router-outlet>
+  <app-header></app-header>
+  <div class="section">
+    <div class="sidebar p-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="main p-3">
+      <div class="routeComponents" [@triggerName]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
     </div>
   </div>
+  <app-footer></app-footer>
 </div>

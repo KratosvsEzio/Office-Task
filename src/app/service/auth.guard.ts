@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
         break;
       }
       case '/gamma':{
-        condition = this.user == 'user 1' || this.user == 'user 2' ? true : false;
+        condition = this.user == 'user 1' || this.user == 'user 2' || this.user == null ? true : false;
         break;
       }
       default:

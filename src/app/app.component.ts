@@ -11,10 +11,8 @@ import { routeTransitionAnimations } from './route-transition-animations';
 })
 export class AppComponent {
   title = 'practiceProject';
-  user: string | null = null;
 
   constructor(private userService: UserService) {
-    this.userService.getUser().subscribe( user => this.user = user);
   }
 
   prepareRoute(outlet: RouterOutlet) {

@@ -19,13 +19,13 @@ export class SidebarComponent implements OnInit {
     let condition: boolean = false;
     switch (url) {
       case 'alpha':
-        condition = this.user == 'user 1' ? true : false;
+        condition = this.user == 'user 1' ||  this.user === null ? true : false;
         break;
       case 'beta':
-        condition = this.user == 'user 2' ? true : false;
+        condition = this.user == 'user 2' ||  this.user === null ? true : false;
         break;
       case 'gamma':
-        condition = this.user == 'user 1' || this.user == 'user 2'? true : false;
+        condition = this.user == 'user 1' || this.user == 'user 2' ||  this.user === null ? true : false;
         break;
       default:
         condition = false;
