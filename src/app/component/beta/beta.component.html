@@ -1,1 +1,6 @@
-<p>Only User 2 Can Access this Component</p>
+<h1 class="text-center">Todo List</h1>
+<div class="todos">
+    <div class="todo" [ngClass]="{completed: todo.completed}" *ngFor="let todo of todos" key="{{todo.id}}">
+        <span>{{todo.title}}</span>
+    </div>
+</div>

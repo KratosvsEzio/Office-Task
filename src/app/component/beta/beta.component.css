@@ -1,0 +1,21 @@
+.todos{
+    width: 60%;
+    margin: auto;
+}
+
+.todo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fbe9e7;
+    color: #ff5722;
+    border-radius: 5px;
+    height: 35px;
+    padding: 10px 5px;
+}
+
+.completed{
+    background-color: #e8f5e9;
+    color: #4caf50;
+}

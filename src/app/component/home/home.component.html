@@ -1,1 +1,4 @@
 <h3>Current User = {{currentUser | async}}</h3>
+
+<button (click)="setDataFetchTypeFlag(false)" class="btn btn-service">Load Data Through Serice</button>
+<button (click)="setDataFetchTypeFlag(true)" class="btn btn-resolve">Load Data Through Router Resolve</button>

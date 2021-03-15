@@ -1,0 +1,14 @@
+.btn{
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ba68c8;
+    background-color: white;
+    color: #9c27b0;
+    padding: 5px 10px;
+    transition: background-color 300ms linear;
+}
+
+.btn-service:hover, .btn-resolve:hover{
+    background-color: #9c27b0;
+    color: white;
+}

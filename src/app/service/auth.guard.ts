@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     let condition: boolean = false;
     this.userService.getUser().subscribe( user => this.user = user);
 
-    console.log('Current url', url);
+    // console.log('Current url', url);
     switch (url) {
       case '/alpha':{
         condition = this.user == 'user 1' ? true : false;

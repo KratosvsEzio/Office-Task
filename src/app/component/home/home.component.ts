@@ -17,7 +17,10 @@ export class HomeComponent implements OnInit {
   }
 
   setUser(user: string) {
-    console.log('hello');
     this.userService.setUser(user);
+  }
+
+  setDataFetchTypeFlag(data) {
+    this.userService.setDataFetchFlag(data);
   }
 }
