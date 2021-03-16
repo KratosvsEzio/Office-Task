@@ -1,6 +1,29 @@
-<h1 class="text-center">Todo List</h1>
-<div class="todos">
-    <div class="todo" [ngClass]="{completed: todo.completed}" *ngFor="let todo of todos" key="{{todo.id}}">
-        <span>{{todo.title}}</span>
+<section>
+    <div class="todos-section">
+        <h1 class="text-center">Todo List</h1>
+        <div class="width">
+            <div class="todo" [ngClass]="{completed: todo.completed}" *ngFor="let todo of todos">
+                <span>{{todo.title}}</span>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="time-section">
+        <h1>Time</h1>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let time of times">
+                        <td>{{time.title}}</td>
+                        <td>{{time.time}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

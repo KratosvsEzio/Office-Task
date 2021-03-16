@@ -1,4 +1,12 @@
-.todos{
+section {
+    display: flex;
+}
+
+.todos-section{
+    flex: 1 1 60%
+}
+
+.width{
     width: 60%;
     margin: auto;
 }
@@ -18,4 +26,8 @@
 .completed{
     background-color: #e8f5e9;
     color: #4caf50;
+}
+
+.time-section{
+    flex: 1 1 40%
 }

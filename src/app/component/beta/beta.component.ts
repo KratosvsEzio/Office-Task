@@ -12,6 +12,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 export class BetaComponent implements OnInit, OnDestroy {
 
   todos: any = [];
+  times: any = [];
   dataFetchType: boolean = false;
 
   constructor(
@@ -23,7 +24,7 @@ export class BetaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('Beta Component is rendered', (new Date()).getTime());
+    this.times.push({title: 'Component Rendered', time: (new Date()).getTime()})
 
     // Fetch data fetch type flag from service
     this.userService.getDataFetchType().subscribe( dataFetchType => {
@@ -36,10 +37,10 @@ export class BetaComponent implements OnInit, OnDestroy {
 
   // Fetching data from service after component render's
   fetchTodoAfterRender(): void {
-    console.log('Todos is loaded After, before call', (new Date()).getTime());
+    this.times.push({title: 'After Render, Before Call', time: (new Date()).getTime()})
 
     this.todoAfterService.getTodosAfter().subscribe( todos => {
-      console.log('Todos is loaded After, after call', (new Date()).getTime());
+      this.times.push({title: 'After Render, After Call', time: (new Date()).getTime()})
       if(!this.dataFetchType) {
         this.todos = [];
         this.todos = todos ;
@@ -49,10 +50,10 @@ export class BetaComponent implements OnInit, OnDestroy {
 
   // Prefetching data from router before component render's
   fetchTodoBeforeRender(): void {
-    console.log('Todos is loaded Before, before call', (new Date()).getTime());
+    this.times.push({title: 'Before Render, After Call', time: (new Date()).getTime()})
 
     this._routes.data.subscribe( (todos: any) => {
-      console.log('Todos is loaded Before, after call', (new Date()).getTime());
+      this.times.push({title: 'Before Render, After Call', time: (new Date()).getTime()})
       this.todos = [];
       this.todos = todos.TodoBeforeService;
     })
