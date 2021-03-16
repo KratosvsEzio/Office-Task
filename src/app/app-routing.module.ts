@@ -6,13 +6,13 @@ import { AlphaComponent } from './component/alpha/alpha.component';
 import { BetaComponent } from './component/beta/beta.component';
 import { GammaComponent } from './component/gamma/gamma.component';
 import { HomeComponent } from './component/home/home.component';
-import { UserDataBeforeRenderService } from './service/user-data-before-render.service'
+import { TodoBeforeService } from './service/todo-before.service'
 
 
 const routes: Routes = [
   { path: 'alpha', component: AlphaComponent, canActivate: [AuthGuard], data: { animationState: 'alpha' }},
   { path: 'beta', component: BetaComponent, canActivate: [AuthGuard], data: { animationState: 'beta' },
-    resolve: {UserDataBeforeRenderService}
+    resolve: {TodoBeforeService}
   },
   { path: 'gamma', component: GammaComponent, canActivate: [AuthGuard], data: { animationState: 'gamma' }},
   { path: 'home', component: HomeComponent, data: { animationState: 'home' }},

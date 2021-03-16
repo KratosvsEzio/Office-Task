@@ -1,3 +1,5 @@
+import { TodoBeforeService } from './../../service/todo-before.service';
+import { TodoAfterService } from './../../service/todo-after.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
@@ -12,37 +14,48 @@ export class BetaComponent implements OnInit, OnDestroy {
   todos: any = [];
   dataFetchType: boolean = false;
 
-  constructor(private userService: UserService, private _routes: ActivatedRoute) {
+  constructor(
+    private userService: UserService, 
+    private _routes: ActivatedRoute,
+    private todoAfterService: TodoAfterService,
+  ) {
     console.log('Beta Component is loaded');
   }
 
   ngOnInit(): void {
-    console.log('Beta Component is rendered');
+    console.log('Beta Component is rendered', (new Date()).getTime());
 
     // Fetch data fetch type flag from service
     this.userService.getDataFetchType().subscribe( dataFetchType => {
       console.log('data Fetch Type', dataFetchType);
       this.dataFetchType = dataFetchType;
-    })
+    });
 
-    // Fetching data from service 
-    this.userService.getTodosAfter().subscribe( todos => {
+    this.dataFetchType ? this.fetchTodoBeforeRender() : this.fetchTodoAfterRender();
+  }
+
+  // Fetching data from service after component render's
+  fetchTodoAfterRender(): void {
+    console.log('Todos is loaded After, before call', (new Date()).getTime());
+
+    this.todoAfterService.getTodosAfter().subscribe( todos => {
+      console.log('Todos is loaded After, after call', (new Date()).getTime());
       if(!this.dataFetchType) {
-        console.log('Todos is loaded After', todos);
         this.todos = [];
         this.todos = todos ;
       }
     })
+  }
 
-    // Fetching data from router
+  // Prefetching data from router before component render's
+  fetchTodoBeforeRender(): void {
+    console.log('Todos is loaded Before, before call', (new Date()).getTime());
+
     this._routes.data.subscribe( (todos: any) => {
-      if(this.dataFetchType) {
-        console.log('Todos is loaded Before', todos.UserDataBeforeRenderService);
-        this.todos = [];
-        this.todos = todos.UserDataBeforeRenderService;
-      }
+      console.log('Todos is loaded Before, after call', (new Date()).getTime());
+      this.todos = [];
+      this.todos = todos.TodoBeforeService;
     })
-
   }
 
   ngOnDestroy() {

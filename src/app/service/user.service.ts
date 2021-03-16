@@ -31,8 +31,4 @@ export class UserService {
     this.dataFetchflag.next(data);
   }
 
-  getTodosAfter() {
-    return this.http.get('https://jsonplaceholder.typicode.com/todos');
-  }
-
 }
