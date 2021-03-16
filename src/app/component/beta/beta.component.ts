@@ -50,7 +50,7 @@ export class BetaComponent implements OnInit, OnDestroy {
 
   // Prefetching data from router before component render's
   fetchTodoBeforeRender(): void {
-    this.times.push({title: 'Before Render, After Call', time: (new Date()).getTime()})
+    this.times.push({title: 'Before Render, Before Call', time: (new Date()).getTime()})
 
     this._routes.data.subscribe( (todos: any) => {
       this.times.push({title: 'Before Render, After Call', time: (new Date()).getTime()})
