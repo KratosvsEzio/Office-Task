@@ -4,8 +4,8 @@
             <span class="mr-2" [ngSwitch]="options.type">
                 <span *ngSwitchCase="'info'"> <img src="../../../assets/svg/info.svg"> </span>
                 <span *ngSwitchCase="'error'"> <img src="../../../assets/svg/error.svg"> </span>
-                <span *ngSwitchCase="'success'"> <img src="../../../assets/svg/check.svg"> </span>
-                <span *ngSwitchCase="'warning'"> <img src="../../../assets/svg/exclamation.svg"> </span>
+                <span *ngSwitchCase="'success'"> <img src="../../../assets/svg/checked.svg"> </span>
+                <span *ngSwitchCase="'warning'"> <img src="../../../assets/svg/danger-sign.svg"> </span>
                 <span *ngSwitchDefault>output2</span>
             </span>
             <span>{{options.message}}</span>
