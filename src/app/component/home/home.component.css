@@ -1,3 +1,7 @@
+button, button:hover, button:focus{
+    outline: none;
+}
+
 .btn{
     margin-right: 5px;
     border-radius: 5px;
@@ -11,4 +15,53 @@
 .btn-service:hover, .btn-resolve:hover{
     background-color: #9c27b0;
     color: white;
+}
+
+.btn-toaster{
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px 10px;
+    min-width: 75px;
+    transition: background-color 300ms linear;
+} 
+
+.success:hover{
+    background-color: #75d10e;
+    color: white;
+}
+
+.info:hover{
+    background-color: #35c4fc;
+    color: white;
+}
+
+.warning:hover{
+    background-color: #ffb70a;
+    color: white;
+}
+
+.error:hover{
+    background-color: #f23950;
+    color: white;
+}
+
+.success{
+    color: #75d10e;
+    border: 1px solid #75d10e;
+}
+
+.info{
+    color: #35c4fc;
+    border: 1px solid #35c4fc;
+}
+
+.warning{
+    color: #ffb70a;
+    border: 1px solid #ffb70a;
+}
+
+.error{
+    color: #f23950;
+    border: 1px solid #f23950;
 }

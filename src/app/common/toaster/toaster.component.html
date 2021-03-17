@@ -1,0 +1,15 @@
+<section [ngClass]="{show: show, shadow: true, info: options.type === 'info', success: options.type === 'success', error: options.type === 'error', warning: options.type === 'warning'}">
+    <div class="toaster">
+        <div class="message">
+            <span class="mr-2" [ngSwitch]="options.type">
+                <span *ngSwitchCase="'info'"> <img src="../../../assets/svg/info.svg"> </span>
+                <span *ngSwitchCase="'error'"> <img src="../../../assets/svg/error.svg"> </span>
+                <span *ngSwitchCase="'success'"> <img src="../../../assets/svg/check.svg"> </span>
+                <span *ngSwitchCase="'warning'"> <img src="../../../assets/svg/exclamation.svg"> </span>
+                <span *ngSwitchDefault>output2</span>
+            </span>
+            <span>{{options.message}}</span>
+        </div>
+        <div [ngClass]="{'time-bar-show': show, 'time-bar': true}"></div>   
+    </div>
+</section>

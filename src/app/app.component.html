@@ -11,4 +11,7 @@
     </div>
   </div>
   <app-footer></app-footer>
+  <div *ngIf="toaster.length !== 0">
+    <app-toaster *ngFor="let item of toaster.slice().reverse()"></app-toaster>
+  </div>
 </div>

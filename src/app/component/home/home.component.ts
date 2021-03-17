@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { Observable } from 'rxjs';
+import { ToasterService } from '../../service/toaster.service'
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,9 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   currentUser: Observable<string | null> = this.userService.getUser();
+  message = 'Something is wrong!';
   
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private toasterService: ToasterService) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +24,9 @@ export class HomeComponent implements OnInit {
 
   setDataFetchTypeFlag(data) {
     this.userService.setDataFetchFlag(data);
+  }
+
+  toaster(options) {
+    this.toasterService.setOptions(options)
   }
 }
