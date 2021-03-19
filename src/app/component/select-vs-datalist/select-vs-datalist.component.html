@@ -1,0 +1,43 @@
+<section class="d-flex">
+    <div class="select-section">
+        <div class="mb-4">
+            <span>Selected Value of the Select = </span>&nbsp;
+            <span class="value">{{animal}}</span>
+        </div>
+        <label for="animal mr-2">Select any Animal from the given list.</label>
+        <div>
+            <select class="dropdown" [(ngModel)]="animal">
+                <option value="">Select Animal...</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="lion">Lion</option>
+                <option value="tiger">Tiger</option>
+                <option value="Snake">Snake</option>
+                <option value="bear">Bear</option>
+            </select>
+        </div>
+    </div>
+    <div class="datalist-section">
+
+        <div class="mb-4">
+            <span>Selected Value of the Datalist = </span>&nbsp;
+            <span class="value">{{game}}</span>
+        </div>
+        <div>
+            <label for="games mr-2">Select or Search any Game from the given list.</label>
+            <div>
+                <input class="dropdown" placeholder="Select Game..." [(ngModel)]="game" list="games">
+                <datalist id="games">
+                    <option value="">Select Games...</option>
+                    <option value="Assasins Creed Brotherhood">
+                    <option value="Assasins Creed Origins">
+                    <option value="Prince of Persia">
+                    <option value="GTA Vice City">
+                    <option value="God of War">
+                    <option value="Witcher 3">
+                </datalist>
+            </div>
+        </div>
+
+    </div>
+</section>

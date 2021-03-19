@@ -28,7 +28,7 @@ export class SidebarComponent implements OnInit {
         condition = this.user == 'user 1' || this.user == 'user 2' ||  this.user === null ? true : false;
         break;
       default:
-        condition = false;
+        condition = true;
         break;
     }
     return condition;
