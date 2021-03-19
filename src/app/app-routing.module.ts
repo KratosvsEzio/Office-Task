@@ -6,7 +6,9 @@ import { AlphaComponent } from './component/alpha/alpha.component';
 import { BetaComponent } from './component/beta/beta.component';
 import { GammaComponent } from './component/gamma/gamma.component';
 import { HomeComponent } from './component/home/home.component';
-import { TodoBeforeService } from './service/todo-before.service'
+import { TodoBeforeService } from './service/todo-before.service';
+import { SelectVsDatalistComponent } from './component/select-vs-datalist/select-vs-datalist.component';
+import { DisplayNewHtmlComponent } from './component/display-new-html/display-new-html.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   },
   { path: 'gamma', component: GammaComponent, canActivate: [AuthGuard], data: { animationState: 'gamma' }},
   { path: 'home', component: HomeComponent, data: { animationState: 'home' }},
+  { path: 'datalist', component: SelectVsDatalistComponent, data: { animationState: 'datalist' }},
+  { path: 'newHtml', component: DisplayNewHtmlComponent, data: { animationState: 'newHtml' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
@@ -34,7 +38,9 @@ export const routingComponent = [
   AlphaComponent,
   BetaComponent, 
   GammaComponent, 
-  HomeComponent 
+  HomeComponent,
+  SelectVsDatalistComponent,
+  DisplayNewHtmlComponent,
 ]
 
 

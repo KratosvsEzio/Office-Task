@@ -17,7 +17,7 @@ import { AppRoutingModule, routingComponent } from './app-routing.module';
 
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { ToasterComponent } from './common/toaster/toaster.component'
+import { ToasterComponent } from './common/toaster/toaster.component';
 
 
 @NgModule({

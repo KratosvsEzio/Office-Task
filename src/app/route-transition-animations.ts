@@ -1,7 +1,8 @@
 import { trigger, transition, style, query, group, animate, animateChild } from '@angular/animations';
 
 export const routeTransitionAnimations = trigger('triggerName', [
-    transition("home => *, alpha => beta, alpha => gamma, beta => gamma", [
+    transition("home => *, alpha => beta, alpha => gamma, alpha => datalist, alpha => newHtml, beta => gamma, beta => datalist, beta => newHtml, gamma => datalist, gamma => newHtml, datalist => newHtml"
+      , [
       style({ position: 'relative' }),
       query(':enter, :leave', [
           style({
@@ -14,13 +15,14 @@ export const routeTransitionAnimations = trigger('triggerName', [
       query(':enter', [style({ right: '-100%', opacity: 0 })]),
       query(':leave', animateChild()),
       group([
-          query(':leave', [animate('10ms ease-out', style({ right: '100%', opacity: 0 }))]),
-          query(':enter', [animate('10ms ease-out', style({ right: '0%', opacity: 1 }))])
+          query(':leave', [animate('200ms ease-out', style({ right: '100%', opacity: 0 }))]),
+          query(':enter', [animate('200ms ease-out', style({ right: '0%', opacity: 1 }))])
       ]),
       query(':enter', animateChild())
     ]),
 
-    transition('gamma => *, beta => alpha, beta => home, alpha => home', [
+    transition("newHtml => *, datalist => gamma, datalist => beta, datalist => aplha, datalist => home, gamma => beta, gamma => alpha, gamma => home , beta => alpha, beta => home, alpha => home"
+    , [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -33,8 +35,8 @@ export const routeTransitionAnimations = trigger('triggerName', [
       query(':enter', [style({ left: '-100%', opacity: 0 })]),
       query(':leave', animateChild()),
       group([
-        query(':leave', [animate('10ms ease-out', style({ left: '100%', opacity: 0 }))]),
-        query(':enter', [animate('10ms ease-out', style({ left: '0%', opacity: 1 }))])
+        query(':leave', [animate('200ms ease-out', style({ left: '100%', opacity: 0 }))]),
+        query(':enter', [animate('200ms ease-out', style({ left: '0%', opacity: 1 }))])
       ]),
       query(':enter', animateChild())
     ])
