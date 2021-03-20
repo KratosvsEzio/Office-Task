@@ -9,6 +9,7 @@ import { HomeComponent } from './component/home/home.component';
 import { TodoBeforeService } from './service/todo-before.service';
 import { SelectVsDatalistComponent } from './component/select-vs-datalist/select-vs-datalist.component';
 import { DisplayNewHtmlComponent } from './component/display-new-html/display-new-html.component';
+import { DropShadowComponent } from './component/drop-shadow/drop-shadow.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, data: { animationState: 'home' }},
   { path: 'datalist', component: SelectVsDatalistComponent, data: { animationState: 'datalist' }},
   { path: 'newHtml', component: DisplayNewHtmlComponent, data: { animationState: 'newHtml' }},
+  { path: 'dropshadow', component: DropShadowComponent, data: { animationState: 'dropShadow' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
@@ -41,6 +43,7 @@ export const routingComponent = [
   HomeComponent,
   SelectVsDatalistComponent,
   DisplayNewHtmlComponent,
+  DropShadowComponent,
 ]
 
 

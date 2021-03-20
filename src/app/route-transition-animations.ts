@@ -1,8 +1,42 @@
 import { trigger, transition, style, query, group, animate, animateChild } from '@angular/animations';
 
+const array = ['home', 'alpha', 'beta', 'gamma', 'datalist', 'newHtml', 'dropShadow'];
+
+const left2RightTriggerNames = () => {
+  let trigger = '';
+  array.forEach( (element, i) => {
+    if(i === 0) {
+      trigger += element + ' => *'
+    } else {
+      array.forEach( (to, j) => {
+        if(j > i) {
+          trigger += `, ${element} => ${to}`
+        }
+      })
+    }
+  });
+  return trigger;
+}
+
+const right2LeftTriggerNames = () => {
+  let trigger = '';
+  array.reverse().forEach( (element, i) => {
+    if(i === 0) {
+      trigger += element + ' => *'
+    } else {
+      array.forEach( (to, j) => {
+        if(j > i) {
+          trigger += `, ${element} => ${to}`
+        }
+      })
+    }
+  });
+  return trigger;
+}
+
 export const routeTransitionAnimations = trigger('triggerName', [
-    transition("home => *, alpha => beta, alpha => gamma, alpha => datalist, alpha => newHtml, beta => gamma, beta => datalist, beta => newHtml, gamma => datalist, gamma => newHtml, datalist => newHtml"
-      , [
+    // Animation From Left to Right
+    transition(left2RightTriggerNames(), [
       style({ position: 'relative' }),
       query(':enter, :leave', [
           style({
@@ -20,9 +54,8 @@ export const routeTransitionAnimations = trigger('triggerName', [
       ]),
       query(':enter', animateChild())
     ]),
-
-    transition("newHtml => *, datalist => gamma, datalist => beta, datalist => aplha, datalist => home, gamma => beta, gamma => alpha, gamma => home , beta => alpha, beta => home, alpha => home"
-    , [
+    // Animation From Right to Left
+    transition(right2LeftTriggerNames(), [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
