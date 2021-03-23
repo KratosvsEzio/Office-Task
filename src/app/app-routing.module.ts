@@ -10,6 +10,7 @@ import { TodoBeforeService } from './service/todo-before.service';
 import { SelectVsDatalistComponent } from './component/select-vs-datalist/select-vs-datalist.component';
 import { DisplayNewHtmlComponent } from './component/display-new-html/display-new-html.component';
 import { DropShadowComponent } from './component/drop-shadow/drop-shadow.component';
+import { TextEditorComponent } from './component/text-editor/text-editor.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'datalist', component: SelectVsDatalistComponent, data: { animationState: 'datalist' }},
   { path: 'newHtml', component: DisplayNewHtmlComponent, data: { animationState: 'newHtml' }},
   { path: 'dropshadow', component: DropShadowComponent, data: { animationState: 'dropShadow' }},
+  { path: 'editor', component: TextEditorComponent, data: { animationState: 'editor' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
@@ -44,6 +46,7 @@ export const routingComponent = [
   SelectVsDatalistComponent,
   DisplayNewHtmlComponent,
   DropShadowComponent,
+  TextEditorComponent,
 ]
 
 
