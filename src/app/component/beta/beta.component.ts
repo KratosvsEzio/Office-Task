@@ -1,3 +1,4 @@
+import { LoaderService } from './../../service/loader.service';
 import { TodoBeforeService } from './../../service/todo-before.service';
 import { TodoAfterService } from './../../service/todo-after.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -19,6 +20,7 @@ export class BetaComponent implements OnInit, OnDestroy {
     private userService: UserService, 
     private _routes: ActivatedRoute,
     private todoAfterService: TodoAfterService,
+    private loaderService: LoaderService,
   ) {
     console.log('Beta Component is loaded');
   }
@@ -39,8 +41,10 @@ export class BetaComponent implements OnInit, OnDestroy {
   fetchTodoAfterRender(): void {
     this.times.push({title: 'After Render, Before Call', time: (new Date()).getTime()})
 
+    this.loaderService.setLoader(true);
     this.todoAfterService.getTodosAfter().subscribe( todos => {
       this.times.push({title: 'After Render, After Call', time: (new Date()).getTime()})
+      this.loaderService.setLoader(false);
       if(!this.dataFetchType) {
         this.todos = [];
         this.todos = todos ;

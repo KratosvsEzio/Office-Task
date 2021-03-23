@@ -44,6 +44,6 @@ section{
     height: 24px;
 }
 
-.datalist-dropdown:hover > .dropdown-icon:f, .datalist-dropdown .dropdown:focus + .dropdown-icon{
+.datalist-dropdown:hover > .dropdown-icon, .datalist-dropdown .dropdown:focus + .dropdown-icon{
     display: block;
 }

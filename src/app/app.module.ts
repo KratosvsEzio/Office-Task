@@ -18,6 +18,7 @@ import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { ToasterComponent } from './common/toaster/toaster.component';
+import { LoaderComponent } from './common/loader/loader.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ToasterComponent } from './common/toaster/toaster.component';
     HeaderComponent,
     FooterComponent,
     ToasterComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

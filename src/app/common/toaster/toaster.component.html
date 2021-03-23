@@ -8,7 +8,13 @@
                 <span *ngSwitchCase="'warning'"> <img src="../../../assets/svg/danger-sign.svg"> </span>
                 <span *ngSwitchDefault><img src="../../../assets/svg/info.svg"></span>
             </span>
-            <span>{{options.message}}</span>
+            <span class="mr-2 toaster-heading" [ngSwitch]="options.type">
+                <span *ngSwitchCase="'info'"> <strong>Info</strong> </span>
+                <span *ngSwitchCase="'error'"> <strong>Error</strong> </span>
+                <span *ngSwitchCase="'success'"> <strong>Success</strong> </span>
+                <span *ngSwitchCase="'warning'"> <strong>Warning</strong> </span>
+            </span>
+            <div class="mt-2">{{options.message}}</div>
         </div>
         <div [ngClass]="{'time-bar-show': show, 'time-bar': true}"></div>   
     </div>
