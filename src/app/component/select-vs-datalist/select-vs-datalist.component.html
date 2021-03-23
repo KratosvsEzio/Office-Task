@@ -26,7 +26,12 @@
         <div>
             <label for="games mr-2">Select or Search any Game from the given list.</label>
             <div>
-                <input class="dropdown" placeholder="Select Game..." [(ngModel)]="game" list="games">
+                <span class="datalist-dropdown">
+                    <input class="dropdown" placeholder="Select Game..." [(ngModel)]="game" list="games">
+                    <span class="dropdown-icon">
+                        <img src="../../../assets/svg/down.svg">
+                    </span>
+                </span>
                 <datalist id="games">
                     <option value="Assassin's Creed">
                     <option value="Assassin's Creed II">
