@@ -19,7 +19,6 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { ToasterComponent } from './common/toaster/toaster.component';
 import { LoaderComponent } from './common/loader/loader.component';
-import { AuthInterceptor } from './service/interceptor-fake-backend';
 
 
 @NgModule({
@@ -47,13 +46,7 @@ import { AuthInterceptor } from './service/interceptor-fake-backend';
     MatSliderModule,
     CKEditorModule, 
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
