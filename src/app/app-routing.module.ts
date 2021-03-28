@@ -11,6 +11,7 @@ import { SelectVsDatalistComponent } from './component/select-vs-datalist/select
 import { DisplayNewHtmlComponent } from './component/display-new-html/display-new-html.component';
 import { DropShadowComponent } from './component/drop-shadow/drop-shadow.component';
 import { ThanosAnimationComponent } from './component/thanos-animation/thanos-animation.component';
+import { TextEditorComponent } from './component/text-editor/text-editor.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'newHtml', component: DisplayNewHtmlComponent, data: { animationState: 'newHtml' }},
   { path: 'dropshadow', component: DropShadowComponent, data: { animationState: 'dropShadow' }},
   { path: 'thanos-animation', component: ThanosAnimationComponent, data: { animationState: 'thanosAnimation' }},
+  { path: 'editor', component: TextEditorComponent, data: { animationState: 'editor' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
@@ -45,6 +47,7 @@ export const routingComponent = [
   DisplayNewHtmlComponent,
   DropShadowComponent,
   ThanosAnimationComponent,
+  TextEditorComponent,
 ]
 
 

@@ -1,6 +1,6 @@
 import { trigger, transition, style, query, group, animate, animateChild } from '@angular/animations';
 
-const array = ['home', 'alpha', 'beta', 'gamma', 'datalist', 'newHtml', 'dropShadow', 'thanosAnimation'];
+const array = ['home', 'alpha', 'beta', 'gamma', 'datalist', 'newHtml', 'dropShadow', 'editor', 'thanosAnimation'];
 
 const left2RightTriggerNames = () => {
   let trigger = '';
