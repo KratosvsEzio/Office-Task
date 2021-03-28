@@ -21,6 +21,10 @@
     "@angular/platform-browser": "~11.2.5",
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
+    "@wellwind/ngx-thanos": "0.0.5",
+    "@wellwind/thanos-snap": "0.0.5",
+    "html2canvas": "^1.0.0-rc.7",
+    "ramda": "^0.27.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

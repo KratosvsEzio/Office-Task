@@ -18,6 +18,7 @@ import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { ToasterComponent } from './common/toaster/toaster.component';
+import { NgxThanosModule } from '@wellwind/ngx-thanos';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ToasterComponent } from './common/toaster/toaster.component';
     MatIconModule,
     MatCardModule,
     MatSliderModule, 
+    NgxThanosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
