@@ -12,6 +12,7 @@ import { DisplayNewHtmlComponent } from './component/display-new-html/display-ne
 import { DropShadowComponent } from './component/drop-shadow/drop-shadow.component';
 import { ThanosAnimationComponent } from './component/thanos-animation/thanos-animation.component';
 import { TextEditorComponent } from './component/text-editor/text-editor.component';
+import { CustomSelectBoxComponent } from './component/custom-select-box/custom-select-box.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'dropshadow', component: DropShadowComponent, data: { animationState: 'dropShadow' }},
   { path: 'thanos-animation', component: ThanosAnimationComponent, data: { animationState: 'thanosAnimation' }},
   { path: 'editor', component: TextEditorComponent, data: { animationState: 'editor' }},
+  { path: 'custom-select', component: CustomSelectBoxComponent, data: { animationState: 'editor' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
@@ -48,6 +50,7 @@ export const routingComponent = [
   DropShadowComponent,
   ThanosAnimationComponent,
   TextEditorComponent,
+  CustomSelectBoxComponent,
 ]
 
 
