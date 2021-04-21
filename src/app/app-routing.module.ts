@@ -25,7 +25,9 @@ const routes: Routes = [
   { path: 'dropshadow', component: DropShadowComponent, data: { animationState: 'dropShadow' }},
   { path: 'thanos-animation', component: ThanosAnimationComponent, data: { animationState: 'thanosAnimation' }},
   { path: 'editor', component: TextEditorComponent, data: { animationState: 'editor' }},
-  { path: 'custom-select', component: CustomSelectBoxComponent, data: { animationState: 'editor' }},
+  { path: 'custom-select', component: CustomSelectBoxComponent, data: { animationState: 'select' }},
+  { path: 'delta', loadChildren: () => import('./delta/delta.module').then(m => m.DeltaModule), data: { animationState: 'delta' }},
+  { path: 'zeta', loadChildren: () => import('./zeta/zeta.module').then(m => m.ZetaModule), data: { animationState: 'zeta' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
