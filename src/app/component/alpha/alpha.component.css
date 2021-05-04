@@ -1,0 +1,29 @@
+#mytable {
+    background-color: white;
+}
+
+table{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+tr{
+    margin: 2.5px;
+}
+
+tr:last-child{
+    border-bottom: 2px solid black;
+}
+
+td, th{
+    padding: 5px;
+}
+
+th{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+  
+/* .html2canvas-container {
+    min-height: 670px !important;
+} */

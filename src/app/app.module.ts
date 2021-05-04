@@ -21,6 +21,7 @@ import { ToasterComponent } from './common/toaster/toaster.component';
 import { NgxThanosModule } from '@wellwind/ngx-thanos';
 import { LoaderComponent } from './common/loader/loader.component';
 
+import { ExportAsModule } from 'ngx-export-as';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { LoaderComponent } from './common/loader/loader.component';
     MatSliderModule,
     CKEditorModule, 
     NgxThanosModule,
+    ExportAsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
