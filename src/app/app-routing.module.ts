@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'custom-select', component: CustomSelectBoxComponent, data: { animationState: 'select' }},
   { path: 'delta', loadChildren: () => import('./delta/delta.module').then(m => m.DeltaModule), data: { animationState: 'delta' }},
   { path: 'zeta', loadChildren: () => import('./zeta/zeta.module').then(m => m.ZetaModule), data: { animationState: 'zeta' }},
+  { path: 'lazyload', loadChildren: () => import('./lazy-load-component/lazy-load-component.module').then(m => m.LazyLoadComponentModule), data: { animationState: 'lazyLoad' }},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
